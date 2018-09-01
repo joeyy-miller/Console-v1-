@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Console</title>
+		<script type="text/javascript">
+			var programname="no program";
+			var programdrive=0;
+		</script>
+		<script id="drive1src" src="consoleprogram.js"></script>
+		<script type="text/javascript">
+			var consoleline="line1";
+			var linenumber=1;
+			var runnumber=1;
+			var drive=0;
+			var mount=0;
+			function console(data1)
+			{
+				if (drive == 1)
+				{
+					switch(document.getElementById("consoleinput").value)
+					{
+						case "exit":
+							drive=0;
+							program("exit");
+							consolewrite("closed");
+							break;
+						case "clear":
+							document.getElementById("line1").innerHTML = "";
+							document.getElementById("line2").innerHTML = "";
+							document.getElementById("line3").innerHTML = "";
+							document.getElementById("line4").innerHTML = "";
+							document.getElementById("line5").innerHTML = "";
+							document.getElementById("line6").innerHTML = "";
+							document.getElementById("line7").innerHTML = "";
+							document.getElementById("line8").innerHTML = "";
+							document.getElementById("line9").innerHTML = "";
+							document.getElementById("line10").innerHTML = "";
+							document.getElementById("line11").innerHTML = "";
+							document.getElementById("line12").innerHTML = "";
+							document.getElementById("line13").innerHTML = "";
+							document.getElementById("line14").innerHTML = "";
+							document.getElementById("line15").innerHTML = "";
+							document.getElementById("line16").innerHTML = "";
+							document.getElementById("line17").innerHTML = "";
+							linenumber=1;
+							consoleline="line1";
+							runnumber=1;
+							break;
+						default:
+							programuser();
+					}
+				}
+				if (drive == 0)
+				{
+					switch(data1)
+					{
+						case "submit":
+							switch(document.getElementById("consoleinput").value)
+							{
+								case "a":
+									consolewrite("test");
+									break;
+								case "color":
+									consolewrite("colorwhat");
+									break;
+								case "color blue":
+									console("changeblue");
+									consolewrite("colorblue");
+									break;
+								case "color black":
+									console("changeblack");
+									consolewrite("colorblack");
+									break;
+								case "color gray":
+									console("changegray");
+									consolewrite("colorgray");
+									break;
+								case "color red":
+									console("changered");
+									consolewrite("colorred");
+									break;
+								case "text":
+									consolewrite("text");
+									break;
+								case "text black":
+									console("textblack");
+									consolewrite("textblack")
+									break;
+								case "text white":
+									console("textwhtie");
+									consolewrite("textwhite");
+									break;
+								case "text gray":
+									console("textgray");
+									consolewrite("textgray");
+									break;
+								case "help":
+									consolewrite("help");
+									break;
+								case "":
+									consolewrite("noinput");
+									break;
+								case "info":
+									consolewrite("info");
+									break;
+								case "clear":
+									console("clear");
+									break;
+								case "date":
+									consolewrite("date")
+									break;
+								case "time":
+									consolewrite("time")
+									break;
+								case "run info":
+									consolewrite("runwhat");
+									break;
+								case "runinfo":
+									consolewrite("runwhat");
+									break;
+								case "drive info":
+									consolewrite("runwhat");
+									break;
+								case "driveinfo":
+									consolewrite("runwhat");
+									break;
+								case "mount drive":
+									console("mount");
+									break;
+								case "drive":
+									consolewrite("drive");
+									break;
+								case "run drive":
+									console("run");
+									break;
+								case "mount":
+									console("mount");
+									break;
+								case "run":
+									console("run");
+									break;
+								case "exit":
+									break;
+								default:
+									consolewrite("default")
+							}
+							break;
+						case "scroll":
+							//Scrolling Console
+							document.getElementById("line1").innerHTML = document.getElementById("line2").innerHTML;
+							document.getElementById("line2").innerHTML = document.getElementById("line3").innerHTML;
+							document.getElementById("line3").innerHTML = document.getElementById("line4").innerHTML;
+							document.getElementById("line4").innerHTML = document.getElementById("line5").innerHTML;
+							document.getElementById("line5").innerHTML = document.getElementById("line6").innerHTML;
+							document.getElementById("line6").innerHTML = document.getElementById("line7").innerHTML;
+							document.getElementById("line7").innerHTML = document.getElementById("line8").innerHTML;
+							document.getElementById("line8").innerHTML = document.getElementById("line9").innerHTML;
+							document.getElementById("line9").innerHTML = document.getElementById("line10").innerHTML;
+							document.getElementById("line10").innerHTML = document.getElementById("line11").innerHTML;
+							document.getElementById("line11").innerHTML = document.getElementById("line12").innerHTML;
+							document.getElementById("line12").innerHTML = document.getElementById("line13").innerHTML;
+							document.getElementById("line13").innerHTML = document.getElementById("line14").innerHTML;
+							document.getElementById("line14").innerHTML = document.getElementById("line15").innerHTML;
+							document.getElementById("line15").innerHTML = document.getElementById("line16").innerHTML;
+							document.getElementById("line16").innerHTML = document.getElementById("line17").innerHTML;
+							break;
+						case "clear":
+							document.getElementById("line1").innerHTML = "";
+							document.getElementById("line2").innerHTML = "";
+							document.getElementById("line3").innerHTML = "";
+							document.getElementById("line4").innerHTML = "";
+							document.getElementById("line5").innerHTML = "";
+							document.getElementById("line6").innerHTML = "";
+							document.getElementById("line7").innerHTML = "";
+							document.getElementById("line8").innerHTML = "";
+							document.getElementById("line9").innerHTML = "";
+							document.getElementById("line10").innerHTML = "";
+							document.getElementById("line11").innerHTML = "";
+							document.getElementById("line12").innerHTML = "";
+							document.getElementById("line13").innerHTML = "";
+							document.getElementById("line14").innerHTML = "";
+							document.getElementById("line15").innerHTML = "";
+							document.getElementById("line16").innerHTML = "";
+							document.getElementById("line17").innerHTML = "";
+							linenumber=1;
+							consoleline="line1";
+							runnumber=1;
+							break;
+						case "textgray":
+							document.getElementById("consoledisplay").style.color = "gray";
+							break;
+						case "textwhtie":
+							document.getElementById("consoledisplay").style.color = "white";
+							break;
+						case "textblack":
+							document.getElementById("consoledisplay").style.color = "black";
+							break;
+						case "changered":
+							document.getElementById("consoledisplay").style.backgroundColor = "red";
+							break;
+						case "changegray":
+							document.getElementById("consoledisplay").style.backgroundColor = "gray";
+							break;
+						case "changeblack":
+							document.getElementById("consoledisplay").style.color = "white";
+							break;
+						case "changeblue":
+							document.getElementById("consoledisplay").style.backgroundColor = "blue";
+							break;
+						case "mount":
+							if (programdrive == 1)
+							{
+								consolewrite("programmount");
+								mount=1;
+							}
+							else
+							{
+								consolewrite("noprogram");
+							}
+							break;
+						case "run":
+							if (mount == 1)
+							{
+								console("clear");
+								program("first");
+								drive=1;
+							}
+							if (mount == 0)
+							{
+								consolewrite("norun");
+							}
+						break;
+					}
+				}
+			}
+			function consolewrite(data1)
+			{
+				if (linenumber <= 17)
+				{
+					switch (data1)
+					{
+						case "noprogram":
+							document.getElementById(consoleline).innerHTML = "["+runnumber+"]There is no program in the drive.";
+							runnumber++;
+							linenumber++;
+							consoleline="line"+linenumber;
+							break;
+						case "programmount":
+							document.getElementById(consoleline).innerHTML = "["+runnumber+"]The program {"+programname+"} has been mounted.";
+							runnumber++;
+							linenumber++;
+							consoleline="line"+linenumber;
+							break;
+						case "closed":
+							document.getElementById(consoleline).innerHTML = "["+runnumber+"]Closed the program.";
+							runnumber++;
+							linenumber++;
+							consoleline="line"+linenumber;
+							break;
+						case "norun":
+							document.getElementById(consoleline).innerHTML = "["+runnumber+"]Nothing to run";
+							runnumber++;
+							linenumber++;
+							consoleline="line"+linenumber;
+							break;
+						case "drvie":
+							if (drive == 1)
+							{
+								document.getElementById(consoleline).innerHTML = "["+runnumber+"]"+programname+" is currently mounted";
+								runnumber++;
+								linenumber++;
+								consoleline="line"+linenumber;
+							}
+							else
+							{
+								document.getElementById(consoleline).innerHTML = "["+runnumber+"]"+programname+"Nothing is currently mounted";
+								runnumber++;
+								linenumber++;
+								consoleline="line"+linenumber;
+							}
+							break;
+						case "test":
+							document.getElementById(consoleline).innerHTML = "["+runnumber+"]Rewritten";
+							runnumber++;
+							linenumber++;
+							consoleline="line"+linenumber;
+							break;
+						case "noinput":
+							document.getElementById(consoleline).innerHTML = "["+runnumber+"]No input detected";
+							runnumber++;
+							linenumber++;
+							consoleline="line"+linenumber;
+							break;
+						case "info":
+							document.getElementById(consoleline).innerHTML = "["+runnumber+"]Console: v1.1, made by Joey Miller";
+							runnumber++;
+							linenumber++;
+							consoleline="line"+linenumber;
+							break;
+						case "help":
+							document.getElementById(consoleline).innerHTML = "["+runnumber+"]Commands: a, info, date, time, mount {drive1}, run, clear.";
+							runnumber++;
+							linenumber++;
+							consoleline="line"+linenumber;
+							document.getElementById(consoleline).innerHTML = "["+runnumber+"]color {red, blue, black, gray}, text {black, gray, white}.";
+							runnumber++;
+							linenumber++;
+							consoleline="line"+linenumber;
+							break;
+						case "date":
+							var date=new Date().getDay();
+							switch(date)
+							{
+								case 0:
+									date="Sunday";
+									break;
+								case 1:
+									date="Monday";
+									break;
+								case 2:
+									date="Tuesday";
+									break;
+								case 3:
+									date="Wednesday";
+									break;
+								case 4:
+									date="Thursday";
+									break;
+								case 5:
+									date="Friday";
+									break;
+								case 6:
+									date="Saturday";
+									break;
+								default:
+									date="Error fetching date";
+							}
+							var currentTime = new Date()
+							var month = currentTime.getMonth() + 1
+							var day = currentTime.getDate()
+							var year = currentTime.getFullYear()
+							document.getElementById(consoleline).innerHTML = "["+runnumber+"]"+month + "/" + day + "/" + year;
+							runnumber++;
+							linenumber++;
+							consoleline="line"+linenumber;
+							document.getElementById(consoleline).innerHTML = "["+runnumber+"]It is "+date;
+							runnumber++;
+							linenumber++;
+							consoleline="line"+linenumber;
+							break;
+						case "time":
+							var currentTime = new Date()
+							var hours = currentTime.getHours()
+							var minutes = currentTime.getMinutes()
+							var am="no"
+							if (minutes < 10)
+							{
+								minutes = "0" + minutes
+							}
+							if(hours < 11)
+							{
+								am="AM"
+							}
+							else
+							{
+								am="PM"
+							}
+							document.getElementById(consoleline).innerHTML = "["+runnumber+"]"+hours+":"+minutes+am;
+							linenumber++;
+							runnumber++;
+							consoleline="line"+linenumber;
+							break;
+						case "runwhat":
+							var disdrive="{not mounted}";
+							if (mount == 1)
+							{
+								disdrive=programname;
+							}
+							else 
+							{
+								document.getElementById(consoleline).innerHTML = "["+runnumber+"]These are mounted:[Mounted:"+disdrive+"]";
+								runnumber++;
+								linenumber++;
+								consoleline="line"+linenumber;
+							}
+							break;
+						case "colorwhat":
+							document.getElementById(consoleline).innerHTML = "["+runnumber+"]Change console to what color? {red, blue, black, gray}.";
+							runnumber++;
+							linenumber++;
+							consoleline="line"+linenumber;
+							break;
+						case "colorgray":
+							document.getElementById(consoleline).innerHTML = "["+runnumber+"]Console color changed to gray.";
+							runnumber++;
+							linenumber++;
+							consoleline="line"+linenumber;
+							break;
+						case "colorblack":
+							document.getElementById(consoleline).innerHTML = "["+runnumber+"]Console color changed to black.";
+							runnumber++;
+							linenumber++;
+							consoleline="line"+linenumber;
+							break;
+						case "colorblue":
+							document.getElementById(consoleline).innerHTML = "["+runnumber+"]Console color changed to blue.";
+							runnumber++;
+							linenumber++;
+							consoleline="line"+linenumber;
+							break;
+						case "colorred":
+							document.getElementById(consoleline).innerHTML = "["+runnumber+"]Console color changed to red.";
+							runnumber++;
+							linenumber++;
+							consoleline="line"+linenumber;
+							break;
+						case "text":
+							document.getElementById(consoleline).innerHTML = "["+runnumber+"]Change text to what color? {black, gray, white}";
+							runnumber++;
+							linenumber++;
+							consoleline="line"+linenumber;
+							break;
+						case "textblack":
+							document.getElementById(consoleline).innerHTML = "["+runnumber+"]Text color changed to black.";
+							runnumber++;
+							linenumber++;
+							consoleline="line"+linenumber;
+							break;
+						case "textwhite":
+							document.getElementById(consoleline).innerHTML = "["+runnumber+"]Text color changed to white.";
+							runnumber++;
+							linenumber++;
+							consoleline="line"+linenumber;
+							break;
+						case "textgray":
+							document.getElementById(consoleline).innerHTML = "["+runnumber+"]Text color changed to gray.";
+							runnumber++;
+							linenumber++;
+							consoleline="line"+linenumber;
+							break;
+						case "default":
+							document.getElementById(consoleline).innerHTML = "["+runnumber+"]That wasan't a recognized command.";
+							runnumber++;
+							linenumber++;
+							consoleline="line"+linenumber;
+					}
+				}
+				if (linenumber > 17)
+				{
+					switch (data1)
+					{
+						case "noprogram":
+							console("scroll");
+							document.getElementById("line17").innerHTML = "["+runnumber+"]There is no program in the drive.";
+							runnumber++;
+						case "closed":
+							console("scroll");
+							document.getElementById("line17").innerHTML = "["+runnumber+"]Closed the program.";
+							runnumber++;
+							break;
+						case "norun":
+							console("scroll");
+							document.getElementById("line17").innerHTML = "["+runnumber+"]Nothing to run";
+							runnumber++;
+							break;
+						case "textgray":
+							console("scroll");
+							document.getElementById("line17").innerHTML = "["+runnumber+"]Text color changed to gray.";
+							runnumber++;
+							break;
+						case "textblack":
+							console("scroll");
+							document.getElementById("line17").innerHTML = "["+runnumber+"]Text color changed to black.";
+							runnumber++;
+							break;
+						case "textwhite":
+							console("scroll");
+							document.getElementById("line17").innerHTML = "["+runnumber+"]Text color changed to white.";
+							runnumber++;
+							break;
+						case "text":
+							console("scroll");
+							document.getElementById("line17").innerHTML = "["+runnumber+"]Change text to what color? {black, gray, white}";
+							runnumber++;
+							break;
+						case "colorred":
+							console("scroll");
+							document.getElementById("line17").innerHTML = "["+runnumber+"]Console color changed to red.";
+							runnumber++;
+							break;
+						case "colorblue":
+							console("scroll");
+							document.getElementById("line17").innerHTML = "["+runnumber+"]Console color changed to blue.";
+							runnumber++;
+							break;
+						case "colorblack":
+							console("scroll");
+							document.getElementById("line17").innerHTML = "["+runnumber+"]Console color changed to black.";
+							runnumber++;
+							break;
+						case "colorgray":
+							console("scroll");
+							document.getElementById("line17").innerHTML = "["+runnumber+"]Console color changed to gray.";
+							runnumber++;
+							break;
+						case "colorwhat":
+							console("scroll");
+							document.getElementById("line17").innerHTML = "["+runnumber+"]Change console to which color? {red, blue, black, gray}.";
+							runnumber++;
+							break;
+						case "test":
+							console("scroll");
+							document.getElementById("line17").innerHTML = "["+runnumber+"]Rewritten";
+							runnumber++;
+							break;
+						case "noinput":
+							console("scroll");
+							document.getElementById("line17").innerHTML = "["+runnumber+"]No input detected";
+							runnumber++;
+							break;
+						case "info":
+							console("scroll");
+							document.getElementById("line17").innerHTML = "["+runnumber+"]Console: v1.1, made by Joey Miller";
+							runnumber++;
+							break;
+						case "runwhat":
+							var disdrive="{not mounted}";
+							if (mount == 1)
+							{
+								disdrive=programname;
+							}
+							else
+							{
+								console("scroll");
+								document.getElementById("line17").innerHTML = "["+runnumber+"]These are mounted:[Mounted:"+disdrive+"]";
+								runnumber++;
+							}
+							break;
+						case "mountdrive1":
+							console("mount");
+							break;
+						case "date":
+							var date=new Date().getDay();
+							switch(date)
+							{
+								case 0:
+									date="Sunday";
+									break;
+								case 1:
+									date="Monday";
+									break;
+								case 2:
+									date="Tuesday";
+									break;
+								case 3:
+									date="Wednesday";
+									break;
+								case 4:
+									date="Thursday";
+									break;
+								case 5:
+									date="Friday";
+									break;
+								case 6:
+									date="Saturday";
+									break;
+								default:
+									date="Error fetching date";
+							}
+							console("scroll");
+							var currentTime = new Date()
+							var month = currentTime.getMonth() + 1
+							var day = currentTime.getDate()
+							var year = currentTime.getFullYear()
+							document.getElementById("line17").innerHTML = "["+runnumber+"]It is "+date+"--"+month+"/"+day+"/"+ year;
+							runnumber++;
+							break;
+						case "time":
+							var currentTime = new Date()
+							var hours = currentTime.getHours()
+							var minutes = currentTime.getMinutes()
+							var am="no"
+							if (minutes < 10)
+							{
+								minutes = "0" + minutes
+							}
+							if(hours < 11)
+							{
+								am="AM"
+							}
+							else
+							{
+								am="PM"
+							}
+							console("scroll");
+							document.getElementById("line17").innerHTML = "["+runnumber+"]"+hours+":"+minutes+am;
+							runnumber++;
+							break;
+						case "help":
+							console("scroll");
+							document.getElementById("line17").innerHTML = "["+runnumber+"]Commands: a, info, date, time, mount {drive1}, run , clear";
+							runnumber++;
+							console("scroll");
+							document.getElementById("line17").innerHTML = "["+runnumber+"]color {red, blue, black, gray}, text {black, gray, white}.";
+							runnumber++
+							break;
+						case "default":
+							console("scroll");
+							document.getElementById("line17").innerHTML = "["+runnumber+"]That wasan't a recognized command.";
+							runnumber++
+							break;
+					}
+				}
+			}
+			function programwrite(data1)
+			{
+				if (linenumber <= 17)
+				{
+					document.getElementById(consoleline).innerHTML = "["+runnumber+"]"+data1;
+					runnumber++;
+					linenumber++;
+					consoleline="line"+linenumber;
+				}
+				if (linenumber > 17)
+				{
+					programspecial("scroll");
+					document.getElementById("line17").innerHTML = "["+runnumber+"]"+data1;
+					runnumber++;
+				}
+			}
+			function programspecial(data1)
+			{
+				switch (data1)
+				{
+					case "scroll":
+						document.getElementById("line1").innerHTML = document.getElementById("line2").innerHTML;
+						document.getElementById("line2").innerHTML = document.getElementById("line3").innerHTML;
+						document.getElementById("line3").innerHTML = document.getElementById("line4").innerHTML;
+						document.getElementById("line4").innerHTML = document.getElementById("line5").innerHTML;
+						document.getElementById("line5").innerHTML = document.getElementById("line6").innerHTML;
+						document.getElementById("line6").innerHTML = document.getElementById("line7").innerHTML;
+						document.getElementById("line7").innerHTML = document.getElementById("line8").innerHTML;
+						document.getElementById("line8").innerHTML = document.getElementById("line9").innerHTML;
+						document.getElementById("line9").innerHTML = document.getElementById("line10").innerHTML;
+						document.getElementById("line10").innerHTML = document.getElementById("line11").innerHTML;
+						document.getElementById("line11").innerHTML = document.getElementById("line12").innerHTML;
+						document.getElementById("line12").innerHTML = document.getElementById("line13").innerHTML;
+						document.getElementById("line13").innerHTML = document.getElementById("line14").innerHTML;
+						document.getElementById("line14").innerHTML = document.getElementById("line15").innerHTML;
+						document.getElementById("line15").innerHTML = document.getElementById("line16").innerHTML;
+						document.getElementById("line16").innerHTML = document.getElementById("line17").innerHTML;
+						break;
+				}
+			}
+			function checkifenter()
+			{
+				if (window.event.keyCode == 13) 
+				{
+					console('submit');
+				}
+			}
+		</script>		
+	</head>
+	<body bgcolor="black">
+		<font face="courier" color="white">
+			
+			Console v1.1<br />
+			&copy;1983 Josephus Computers<br />
+			Do not distribute
+			<div id="consoledisplay" style="width:800px;height: 308px; padding:2px;background-color: black; border:2px solid darkgray; margin:5px;color: white;">
+				<a id="line1"></a><br />
+				<a id="line2"></a><br />
+				<a id="line3"></a><br />
+				<a id="line4"></a><br />
+				<a id="line5"></a><br />
+				<a id="line6"></a><br />
+				<a id="line7"></a><br />
+				<a id="line8"></a><br />
+				<a id="line9"></a><br />
+				<a id="line10"></a><br />
+				<a id="line11"></a><br />
+				<a id="line12"></a><br />
+				<a id="line13"></a><br />
+				<a id="line14"></a><br />
+				<a id="line15"></a><br />
+				<a id="line16"></a><br />
+				<a id="line17"></a><br />
+			</div>
+			<form id="console2">
+				<input type="text" id="consoleinput" style="width:804px; margin: 5px" onKeyPress="checkifenter();" autocomplete="off">
+				<input type="text" style="display: none;">
+			</form>
+			<br />
+			<br />
+			<hr />
+			&copy;Joey Miller, 2012-2013
+		</font>
+	</body>
+</html>
